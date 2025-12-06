@@ -1,0 +1,1866 @@
+pybullet build time: Sep 14 2025 19:12:22
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /home/gwen/.drirc: No such file or directory.
+libGL: using driver amdgpu for 4
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /home/gwen/.drirc: No such file or directory.
+libGL: pci id for fd 4: 1002:1900, driver radeonsi
+libGL: MESA-LOADER: dlopen(/usr/lib/x86_64-linux-gnu/dri/radeonsi_dri.so)
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /home/gwen/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /home/gwen/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /home/gwen/.drirc: No such file or directory.
+/usr/share/libdrm/amdgpu.ids version: 1.0.0
+libGL: Using DRI3 for screen 0
+Random seed: 1933928043
+Using MULTI-CANDIDATE grasp system
+======================================================================
+COMPLETE VIAL SINGULATION SYSTEM - Simple Algorithm
+======================================================================
+MODE: RANDOM SCENE (30 random vials)
+
+ BOX: 50cm x 50cm x 12cm
+   Bottom: 2.0cm thick
+
+VIALS:
+   SMALL: 4x, r=8mm, h=35mm, m=18g
+   MEDIUM: 4x, r=10mm, h=45mm, m=25g
+   LARGE: 4x, r=12mm, h=55mm, m=35g
+
+TRAYS: 3 trays with matching hole sizes
+   SMALL: 6.5cm slots, wall height=3.5cm
+   MEDIUM: 7.0cm slots, wall height=3.5cm
+   LARGE: 4.5cm slots, wall height=5.5cm
+
+[1/5] Creating environment...
+[2/5] Creating table...
+[3/5] Creating box...
+[4/5] Creating trays...
+[5/5] Creating 30 vials (Full Box Mixed - Random)...
+  Using real tube model from: /home/gwen/mengine/demo/assets/tube.urdf
+   First random number: 0.306232 (should be different each run)
+   Created 30 vials
+   Using REAL tube model for large vials
+[6/7] Creating robot...
+⚡ Enabling REAL-TIME simulation mode...
+   Time step: 4.17ms (240 Hz)
+[7/7] Settling physics...
+   Waiting 3 seconds for physics to settle...
+
+ Scene ready!
+
+[Verifying tray reachability...]
+   SMALL tray:
+     Slot (0,0): 45.6cm - REACHABLE but tight (margin: 0.073 rad)
+     Slot (0,1): 39.2cm - OK
+     Slot (1,0): 42.1cm - OK
+     Slot (1,1): 35.1cm - OK
+   MEDIUM tray:
+     Slot (0,0): 39.3cm - OK
+     Slot (0,1): 31.2cm - OK
+     Slot (1,0): 39.3cm - OK
+     Slot (1,1): 31.2cm - OK
+   LARGE tray:
+     Slot (0,0): 42.0cm - OK
+     Slot (0,1): 35.2cm - OK
+     Slot (1,0): 45.4cm - OK
+     Slot (1,1): 39.3cm - OK
+
+   Distance range: 31.2cm (closest) to 45.6cm (farthest)
+   Optimal range for Panda: 25-45cm
+   All tray slots verified reachable!
+   Resetting robot to home position...
+
+======================================================================
+STARTING INTELLIGENT SINGULATION
+======================================================================
+
+ Strategy:
+   1. Detect vial size and position (CV simulation)
+   2. Open gripper to appropriate width
+   3. Approach and grasp gently
+   4. Create constraint for secure transport
+   5. Place in matching tray
+
+
+Computing initial isolation scores...
+     Top 5 most isolated vials:
+       #1: Vial 7 (SMALL) - Score: 100.0
+       #2: Vial 22 (LARGE) - Score: 90.0
+       #3: Vial 1 (SMALL) - Score: 83.3
+       #4: Vial 14 (MEDIUM) - Score: 79.0
+       #5: Vial 21 (LARGE) - Score: 79.0
+Visualizing isolation scores above each vial...
+  Analyzing optimal grasp configuration...
+    Tilt: 40.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 10.0cm)
+
+============================================================
+VIAL 7/30 - SMALL (8mm, 18g) [Isolation Score: 100.0]
+============================================================
+ Position: [0.398, -0.046, 0.798]
+ Axis: [0.23, 0.60, 0.77]
+ Isolation: 10.0cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.893 [FC=0.30, Iso=0.93, Geo=1.04, θ=0°]
+     #2: Score=0.887 [FC=0.30, Iso=0.93, Geo=1.00, θ=0°]
+     #3: Score=0.881 [FC=0.30, Iso=0.90, Geo=1.01, θ=0°]
+     #4: Score=0.879 [FC=0.30, Iso=0.90, Geo=1.00, θ=0°]
+     #5: Score=0.873 [FC=0.30, Iso=0.87, Geo=1.04, θ=0°]
+  Best grasp position: [0.398, -0.046, 0.798]
+Grasp: Multi-candidate (score=0.89)
+  Grasp orientation: approach=[-0.00, 0.00, -1.00], fingers=[-1.00, 0.05, 0.00]
+Target: SMALL tray (0,0) at [-0.388, -0.239, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 4.0mm
+  Creating constraint...
+     Grasp check: dist to end effector=1.4mm
+     End effector: [0.394, -0.045, 0.798]
+     Vial pos: [0.395, -0.044, 0.797]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 25.4°
+     Lifted 5.5cm, tilt now 25.3° (target: 0°)
+     Lifted 25.0cm, tilt now 43.1° (target: 0°)
+  Forcing vial to vertical (current tilt: 43.1°)...
+     Vial orientation locked to vertical, tilt now: 42.4°
+  Moving to SMALL tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: -148° from robot
+       Attempt 1: base=-90°, margin=0.786 rad [GOOD]
+     Using configuration #1: base at -90°, margin=0.786 rad
+     End effector to above_target: 3.2mm
+     Vial XY distance to target: 2.3mm
+     Vial height: 1.119m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [0.3, 0.9]mm
+  Descending to slot...
+     Original target: [-0.388, -0.239, 0.819]
+     Adjusted target: [-0.389, -0.239, 0.819]
+     Compensation: [-0.3, -0.9]mm
+     🔧 Correcting vial orientation (tilt: 60.9°)
+     End effector to target: 5.1mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 9.7°)
+  Retreating...
+  SUCCESS! SMALL vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 1 (SMALL) - Score: 95.2
+       #2: Vial 24 (LARGE) - Score: 94.0
+       #3: Vial 2 (SMALL) - Score: 86.0
+  Analyzing optimal grasp configuration...
+    Tilt: 8.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 75% up vial
+    Approach clearance: 80/100 (min 7.7cm)
+
+============================================================
+VIAL 1/30 - SMALL (8mm, 18g) [Isolation Score: 95.2]
+============================================================
+ Position: [0.348, -0.133, 0.798]
+ Axis: [0.13, -0.05, 0.99]
+ Isolation: 7.7cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (45 valid):
+     #1: Score=0.885 [FC=0.30, Iso=0.90, Geo=1.05, θ=0°]
+     #2: Score=0.885 [FC=0.30, Iso=0.90, Geo=1.05, θ=0°]
+     #3: Score=0.863 [FC=0.30, Iso=0.90, Geo=0.90, θ=25°]
+     #4: Score=0.863 [FC=0.30, Iso=0.90, Geo=0.90, θ=25°]
+     #5: Score=0.855 [FC=0.30, Iso=0.81, Geo=1.04, θ=0°]
+  Best grasp position: [0.348, -0.133, 0.798]
+Grasp: Multi-candidate (score=0.89)
+  Grasp orientation: approach=[-0.00, -0.00, -1.00], fingers=[-0.71, -0.71, 0.00]
+Target: SMALL tray (0,1) at [-0.311, -0.239, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 4.2mm
+  Creating constraint...
+     Grasp check: dist to end effector=4.2mm
+     End effector: [0.349, -0.135, 0.803]
+     Vial pos: [0.350, -0.136, 0.799]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 34.4°
+     Lifted 4.9cm, tilt now 30.7° (target: 0°)
+     Lifted 24.6cm, tilt now 31.0° (target: 0°)
+  Forcing vial to vertical (current tilt: 31.0°)...
+     Vial orientation locked to vertical, tilt now: 81.2°
+  Moving to SMALL tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: -143° from robot
+       Attempt 1: base=-66°, margin=0.635 rad [GOOD]
+     Using configuration #1: base at -66°, margin=0.635 rad
+     End effector to above_target: 1.6mm
+     Vial XY distance to target: 2.4mm
+     Vial height: 1.116m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [0.9, 0.1]mm
+  Descending to slot...
+     Original target: [-0.311, -0.239, 0.819]
+     Adjusted target: [-0.312, -0.239, 0.819]
+     Compensation: [-0.9, -0.1]mm
+     🔧 Correcting vial orientation (tilt: 44.0°)
+     End effector to target: 6.8mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 6.2°)
+  Retreating...
+  SUCCESS! SMALL vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 24 (LARGE) - Score: 94.0
+       #2: Vial 2 (SMALL) - Score: 86.0
+       #3: Vial 14 (MEDIUM) - Score: 84.0
+  Analyzing optimal grasp configuration...
+    Tilt: 95.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 6.4cm)
+
+============================================================
+VIAL 24/30 - LARGE (12mm, 35g) [Isolation Score: 94.0]
+============================================================
+ Position: [0.402, 0.094, 0.799]
+ Axis: [-0.50, 0.86, -0.09]
+ Isolation: 6.4cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.777 [FC=0.30, Iso=0.85, Geo=0.44, θ=0°]
+     #2: Score=0.775 [FC=0.30, Iso=0.85, Geo=0.42, θ=0°]
+     #3: Score=0.754 [FC=0.30, Iso=0.85, Geo=0.29, θ=25°]
+     #4: Score=0.751 [FC=0.30, Iso=0.85, Geo=0.27, θ=25°]
+     #5: Score=0.749 [FC=0.30, Iso=0.77, Geo=0.41, θ=0°]
+  Best grasp position: [0.402, 0.094, 0.809]
+Grasp: Multi-candidate (score=0.78)
+  Grasp orientation: approach=[-0.00, 0.00, -1.00], fingers=[-0.44, 0.90, 0.00]
+Target: LARGE tray (0,0) at [-0.387, 0.163, 0.849]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 48.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=85°, target=24.0mm, force=150N)...
+ Initial grip moved vial: 6.3mm
+  Creating constraint...
+     Grasp check: dist to end effector=469.2mm
+     End effector: [0.342, 0.079, 1.258]
+     Vial pos: [0.403, 0.093, 0.793]
+     Vial too far (469mm > 100mm) - NO constraint
+     Constraint failed, using friction only
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 90.0°
+     Lifted -0.0cm, tilt now 90.0° (target: 0°)
+     Vial not lifting! (only -0.0cm at step 1)
+     Lift failed:
+       #1: Vial 2 (SMALL) - Score: 86.0
+       #2: Vial 14 (MEDIUM) - Score: 84.0
+       #3: Vial 24 (LARGE) - Score: 84.0 (skipped x1)
+  Analyzing optimal grasp configuration...
+    Tilt: 53.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 50/100 (min 4.8cm)
+
+============================================================
+VIAL 2/30 - SMALL (8mm, 18g) [Isolation Score: 86.0]
+============================================================
+ Position: [0.329, 0.050, 0.796]
+ Axis: [-0.25, 0.77, 0.59]
+ Isolation: 4.8cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.839 [FC=0.30, Iso=0.76, Geo=1.02, θ=0°]
+     #2: Score=0.836 [FC=0.30, Iso=0.76, Geo=1.00, θ=0°]
+     #3: Score=0.817 [FC=0.30, Iso=0.76, Geo=0.87, θ=25°]
+     #4: Score=0.816 [FC=0.30, Iso=0.67, Geo=1.05, θ=0°]
+     #5: Score=0.815 [FC=0.30, Iso=0.76, Geo=0.86, θ=25°]
+  Best grasp position: [0.329, 0.050, 0.796]
+Grasp: Multi-candidate (score=0.84)
+  Grasp orientation: approach=[0.00, -0.00, -1.00], fingers=[0.12, -0.99, 0.00]
+Target: SMALL tray (1,0) at [-0.388, -0.162, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 0.1mm
+     Vial not gripped (moved=0.1mm, gripper=14.4mm vs expected=14.4mm)
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. Gripper didn't grip vial
+       Retrying vial 2...
+  Analyzing optimal grasp configuration...
+    Tilt: 53.8 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 50/100 (min 4.8cm)
+
+============================================================
+VIAL 2/30 - SMALL (8mm, 18g) [Isolation Score: 86.0]
+============================================================
+ Position: [0.329, 0.050, 0.796]
+ Axis: [-0.25, 0.77, 0.59]
+ Isolation: 4.8cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.840 [FC=0.30, Iso=0.76, Geo=1.03, θ=0°]
+     #2: Score=0.839 [FC=0.30, Iso=0.76, Geo=1.02, θ=0°]
+     #3: Score=0.817 [FC=0.30, Iso=0.76, Geo=0.88, θ=25°]
+     #4: Score=0.817 [FC=0.30, Iso=0.76, Geo=0.87, θ=25°]
+     #5: Score=0.813 [FC=0.30, Iso=0.67, Geo=1.03, θ=0°]
+  Best grasp position: [0.329, 0.050, 0.796]
+Grasp: Multi-candidate (score=0.84)
+  Grasp orientation: approach=[-0.00, 0.00, -1.00], fingers=[-0.12, 0.99, 0.00]
+Target: SMALL tray (1,0) at [-0.388, -0.162, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 17.3mm
+  Creating constraint...
+     Grasp check: dist to end effector=20.2mm
+     End effector: [0.330, 0.049, 0.799]
+     Vial pos: [0.331, 0.060, 0.783]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 82.4°
+     Lifted 2.6cm, tilt now 89.7° (target: 0°)
+     Lifted 22.9cm, tilt now 90.0° (target: 0°)
+  Forcing vial to vertical (current tilt: 90.0°)...
+     Vial orientation locked to vertical, tilt now: 81.2°
+  Moving to SMALL tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: -157° from robot
+       Attempt 1: base=-67°, margin=0.432 rad [GOOD]
+     Using configuration #1: base at -67°, margin=0.432 rad
+     End effector to above_target: 4.6mm
+     Vial XY distance to target: 3.4mm
+     Vial height: 1.100m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [1.6, 7.0]mm
+  Descending to slot...
+     Original target: [-0.388, -0.162, 0.819]
+     Adjusted target: [-0.390, -0.168, 0.819]
+     Compensation: [-1.6, -7.0]mm
+     🔧 Correcting vial orientation (tilt: 43.3°)
+     End effector to target: 3.3mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 2.9°)
+  Retreating...
+  SUCCESS! SMALL vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 26 (LARGE) - Score: 100.0
+       #2: Vial 24 (LARGE) - Score: 89.0 (skipped x1)
+       #3: Vial 14 (MEDIUM) - Score: 84.0
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.5cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 100.0]
+============================================================
+ Position: [0.369, -0.028, 0.793]
+ Axis: [-0.72, 0.70, 0.00]
+ Isolation: 12.5cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.809 [FC=0.30, Iso=0.96, Geo=0.43, θ=0°]
+     #2: Score=0.806 [FC=0.30, Iso=0.94, Geo=0.44, θ=0°]
+     #3: Score=0.805 [FC=0.30, Iso=0.96, Geo=0.40, θ=0°]
+     #4: Score=0.804 [FC=0.30, Iso=0.94, Geo=0.43, θ=0°]
+     #5: Score=0.801 [FC=0.30, Iso=0.93, Geo=0.45, θ=0°]
+  Best grasp position: [0.369, -0.028, 0.803]
+Grasp: Multi-candidate (score=0.81)
+  Grasp orientation: approach=[0.00, -0.00, -1.00], fingers=[0.64, -0.77, 0.00]
+Target: LARGE tray (0,0) at [-0.387, 0.163, 0.849]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 48.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=90°, target=24.0mm, force=150N)...
+ Initial grip moved vial: 6.3mm
+  Creating constraint...
+     Grasp check: dist to end effector=18.7mm
+     End effector: [0.373, -0.025, 0.807]
+     Vial pos: [0.373, -0.028, 0.788]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 59.1°
+     Lifted 0.8cm, tilt now 59.0° (target: 0°)
+     Lifted 24.3cm, tilt now 31.3° (target: 0°)
+  Forcing vial to vertical (current tilt: 31.3°)...
+     Vial orientation locked to vertical, tilt now: 44.6°
+  Moving to LARGE tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: 157° from robot
+       Attempt 1: base=17°, margin=0.006 rad [RISKY]
+       Attempt 2: base=78°, margin=0.437 rad [GOOD]
+     Using configuration #2: base at 78°, margin=0.437 rad
+     End effector to above_target: 180.9mm
+     ERROR: Cannot reach above_target!
+     Target: [-0.387, 0.163, 1.149]
+     EE pos: [-0.225, 0.242, 1.110]
+     Cannot reach tray:
+       #1: Vial 26 (LARGE) - Score: 90.0 (skipped x1)
+       #2: Vial 24 (LARGE) - Score: 87.0 (skipped x1)
+       #3: Vial 14 (MEDIUM) - Score: 84.0
+  Analyzing optimal grasp configuration...
+    Tilt: 158.8 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 36.1cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 90.0]
+============================================================
+ Position: [-0.132, 0.083, 0.831]
+ Axis: [-0.36, -0.03, -0.93]
+ Isolation: 36.1cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.8 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 36.1cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 90.0]
+============================================================
+ Position: [-0.132, 0.083, 0.831]
+ Axis: [-0.36, -0.03, -0.93]
+ Isolation: 36.1cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.8 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 36.1cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 90.0]
+============================================================
+ Position: [-0.132, 0.084, 0.831]
+ Axis: [-0.36, -0.03, -0.93]
+ Isolation: 36.1cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 26
+     No grasp:
+       #1: Vial 24 (LARGE) - Score: 87.0 (skipped x1)
+       #2: Vial 14 (MEDIUM) - Score: 84.0
+       #3: Vial 26 (LARGE) - Score: 80.0 (skipped x2)
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 50/100 (min 5.9cm)
+
+============================================================
+VIAL 24/30 - LARGE (12mm, 35g) [Isolation Score: 87.0]
+============================================================
+ Position: [0.403, 0.093, 0.793]
+ Axis: [-0.51, 0.86, 0.00]
+ Isolation: 5.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.769 [FC=0.30, Iso=0.83, Geo=0.43, θ=0°]
+     #2: Score=0.766 [FC=0.30, Iso=0.83, Geo=0.41, θ=0°]
+     #3: Score=0.750 [FC=0.30, Iso=0.83, Geo=0.30, θ=25°]
+     #4: Score=0.749 [FC=0.30, Iso=0.83, Geo=0.29, θ=25°]
+     #5: Score=0.743 [FC=0.30, Iso=0.74, Geo=0.43, θ=0°]
+  Best grasp position: [0.403, 0.093, 0.803]
+Grasp: Multi-candidate (score=0.77)
+  Grasp orientation: approach=[0.00, -0.00, -1.00], fingers=[0.44, -0.90, 0.00]
+Target: LARGE tray (0,0) at [-0.387, 0.163, 0.849]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 48.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=90°, target=24.0mm, force=150N)...
+ Initial grip moved vial: 6.0mm
+  Creating constraint...
+     Grasp check: dist to end effector=22.2mm
+     End effector: [0.406, 0.090, 0.810]
+     Vial pos: [0.404, 0.090, 0.787]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 85.8°
+     Lifted 2.0cm, tilt now 67.2° (target: 0°)
+     Lifted 22.8cm, tilt now 89.0° (target: 0°)
+  Forcing vial to vertical (current tilt: 89.0°)...
+     Vial orientation locked to vertical, tilt now: 20.5°
+  Moving to LARGE tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: 157° from robot
+       Attempt 1: base=76°, margin=0.092 rad [RISKY]
+       Attempt 2: base=79°, margin=0.050 rad [RISKY]
+       Attempt 3: base=88°, margin=-0.071 rad [BAD]
+       Attempt 4: base=89°, margin=-0.073 rad [BAD]
+       Attempt 5: base=88°, margin=-0.055 rad [BAD]
+       Attempt 6: base=85°, margin=-0.034 rad [BAD]
+     Using configuration #1: base at 76°, margin=0.092 rad
+     End effector to above_target: 4.7mm
+     Vial XY distance to target: 16.4mm
+     Vial height: 1.125m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [-12.4, 3.3]mm
+  Descending to slot...
+     Original target: [-0.387, 0.163, 0.849]
+     Adjusted target: [-0.375, 0.159, 0.849]
+     Compensation: [12.4, -3.3]mm
+     🔧 Correcting vial orientation (tilt: 16.9°)
+     End effector to target: 3.4mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 7.4°)
+  Retreating...
+  SUCCESS! LARGE vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 14 (MEDIUM) - Score: 84.0
+       #2: Vial 21 (LARGE) - Score: 82.0
+       #3: Vial 26 (LARGE) - Score: 80.0 (skipped x2)
+  Analyzing optimal grasp configuration...
+    Tilt: 5.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 75% up vial
+    Approach clearance: 20/100 (min 2.6cm)
+
+============================================================
+VIAL 14/30 - MEDIUM (10mm, 25g) [Isolation Score: 84.0]
+============================================================
+ Position: [0.533, 0.052, 0.803]
+ Axis: [0.10, 0.01, 1.00]
+ Isolation: 2.5cm to nearest vial
+  Vial too close to neighbors (1 within 4cm)
+  Attempting singulation push...
+     Push trajectory: 13.0cm
+     Start: [0.522, 0.075]
+     End:   [0.580, -0.041]
+     ⚠️  Push start failed - gripper outside box
+        Planned: [0.522, 0.075]
+        Actual:  [0.487, 0.289]
+        Box bounds: X=[0.280, 0.620], Y=[-0.170, 0.170]
+ Push failed, skipping...
+     After push failed:
+       #1: Vial 21 (LARGE) - Score: 82.0
+       #2: Vial 17 (MEDIUM) - Score: 80.0
+       #3: Vial 26 (LARGE) - Score: 80.0 (skipped x2)
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 6.8cm)
+
+============================================================
+VIAL 21/30 - LARGE (12mm, 35g) [Isolation Score: 82.0]
+============================================================
+ Position: [0.523, -0.108, 0.793]
+ Axis: [0.78, -0.63, -0.00]
+ Isolation: 6.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.751 [FC=0.30, Iso=0.77, Geo=0.42, θ=0°]
+     #2: Score=0.750 [FC=0.30, Iso=0.77, Geo=0.42, θ=0°]
+     #3: Score=0.745 [FC=0.30, Iso=0.74, Geo=0.44, θ=0°]
+     #4: Score=0.742 [FC=0.30, Iso=0.74, Geo=0.42, θ=0°]
+     #5: Score=0.738 [FC=0.30, Iso=0.80, Geo=0.29, θ=25°]
+  Best grasp position: [0.523, -0.108, 0.803]
+Grasp: Multi-candidate (score=0.75)
+  Grasp orientation: approach=[-0.00, -0.00, -1.00], fingers=[-0.64, -0.77, 0.00]
+Target: LARGE tray (0,1) at [-0.312, 0.163, 0.849]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 48.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=90°, target=24.0mm, force=150N)...
+ Initial grip moved vial: 0.0mm
+     Vial not gripped (moved=0.0mm, gripper=48.0mm vs expected=48.0mm)
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. Gripper didn't grip vial
+       Retrying vial 21...
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 8.0cm)
+
+============================================================
+VIAL 21/30 - LARGE (12mm, 35g) [Isolation Score: 90.0]
+============================================================
+ Position: [0.520, -0.110, 0.793]
+ Axis: [0.78, -0.62, 0.00]
+ Isolation: 8.0cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.776 [FC=0.30, Iso=0.85, Geo=0.44, θ=0°]
+     #2: Score=0.774 [FC=0.30, Iso=0.85, Geo=0.43, θ=0°]
+     #3: Score=0.762 [FC=0.30, Iso=0.87, Geo=0.29, θ=25°]
+     #4: Score=0.759 [FC=0.30, Iso=0.87, Geo=0.29, θ=25°]
+     #5: Score=0.756 [FC=0.30, Iso=0.78, Geo=0.44, θ=0°]
+  Best grasp position: [0.520, -0.110, 0.803]
+Grasp: Multi-candidate (score=0.78)
+  Grasp orientation: approach=[-0.00, -0.00, -1.00], fingers=[-1.00, -0.09, 0.00]
+Target: LARGE tray (0,1) at [-0.312, 0.163, 0.849]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 48.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=90°, target=24.0mm, force=150N)...
+ Initial grip moved vial: 4.0mm
+  Creating constraint...
+     Grasp check: dist to end effector=9.5mm
+     End effector: [0.520, -0.113, 0.802]
+     Vial pos: [0.521, -0.114, 0.793]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 90.0°
+     Lifted 4.1cm, tilt now 88.6° (target: 0°)
+     Lifted 24.0cm, tilt now 88.6° (target: 0°)
+  Forcing vial to vertical (current tilt: 88.6°)...
+     Vial orientation locked to vertical, tilt now: 55.0°
+  Moving to LARGE tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: 153° from robot
+       Attempt 1: base=45°, margin=-0.050 rad [BAD]
+       Attempt 2: base=61°, margin=0.226 rad [GOOD]
+     Using configuration #2: base at 61°, margin=0.226 rad
+     End effector to above_target: 3.3mm
+     Vial XY distance to target: 7.3mm
+     Vial height: 1.139m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [-5.0, 0.6]mm
+  Descending to slot...
+     Original target: [-0.312, 0.163, 0.849]
+     Adjusted target: [-0.308, 0.162, 0.849]
+     Compensation: [5.0, -0.6]mm
+     🔧 Correcting vial orientation (tilt: 84.5°)
+     End effector to target: 4.0mm
+     WARNING: Joints near limits at descend:
+       Joint 7: 2.771 rad (limits: [-2.897, 2.897], margin: 0.127 rad)
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 7.6°)
+  Retreating...
+  SUCCESS! LARGE vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 17 (MEDIUM) - Score: 80.0
+       #2: Vial 26 (LARGE) - Score: 80.0 (skipped x2)
+       #3: Vial 12 (MEDIUM) - Score: 76.0
+  Analyzing optimal grasp configuration...
+    Tilt: 81.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 50/100 (min 5.7cm)
+
+============================================================
+VIAL 17/30 - MEDIUM (10mm, 25g) [Isolation Score: 80.0]
+============================================================
+ Position: [0.453, 0.111, 0.793]
+ Axis: [-0.64, -0.76, 0.15]
+ Isolation: 5.7cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.853 [FC=0.30, Iso=0.80, Geo=1.04, θ=0°]
+     #2: Score=0.848 [FC=0.30, Iso=0.80, Geo=1.01, θ=0°]
+     #3: Score=0.833 [FC=0.30, Iso=0.80, Geo=0.91, θ=25°]
+     #4: Score=0.829 [FC=0.30, Iso=0.72, Geo=1.04, θ=0°]
+     #5: Score=0.828 [FC=0.30, Iso=0.80, Geo=0.87, θ=25°]
+  Best grasp position: [0.453, 0.111, 0.793]
+Grasp: Multi-candidate (score=0.85)
+  Grasp orientation: approach=[0.00, -0.00, -1.00], fingers=[0.92, -0.39, 0.00]
+Target: MEDIUM tray (0,0) at [-0.391, -0.041, 0.824]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 40.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=81°, target=20.0mm, force=150N)...
+ Initial grip moved vial: 1.3mm
+  Creating constraint...
+     Grasp check: dist to end effector=5.0mm
+     End effector: [0.452, 0.110, 0.797]
+     Vial pos: [0.453, 0.110, 0.792]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 84.1°
+     Lifted 4.6cm, tilt now 83.4° (target: 0°)
+     Lifted 24.9cm, tilt now 83.4° (target: 0°)
+  Forcing vial to vertical (current tilt: 83.4°)...
+     Vial orientation locked to vertical, tilt now: 0.0°
+  Moving to MEDIUM tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: -174° from robot
+       Attempt 1: base=78°, margin=-0.057 rad [BAD]
+       Attempt 2: base=-66°, margin=-0.052 rad [BAD]
+       Attempt 3: base=-68°, margin=0.011 rad [RISKY]
+       Attempt 4: base=-82°, margin=0.310 rad [GOOD]
+     Using configuration #4: base at -82°, margin=0.310 rad
+     End effector to above_target: 4.7mm
+     Vial XY distance to target: 4.5mm
+     Vial height: 1.123m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [0.6, 0.2]mm
+  Descending to slot...
+     Original target: [-0.391, -0.041, 0.824]
+     Adjusted target: [-0.392, -0.041, 0.824]
+     Compensation: [-0.6, -0.2]mm
+     End effector to target: 4.4mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 0.1°)
+  Retreating...
+  SUCCESS! MEDIUM vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 26 (LARGE) - Score: 80.0 (skipped x2)
+       #2: Vial 12 (MEDIUM) - Score: 76.0
+       #3: Vial 14 (MEDIUM) - Score: 74.0 (skipped x1)
+  Analyzing optimal grasp configuration...
+    Tilt: 158.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 19.0cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 80.0]
+============================================================
+ Position: [-0.132, 0.084, 0.831]
+ Axis: [-0.36, -0.05, -0.93]
+ Isolation: 19.0cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 19.0cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 80.0]
+============================================================
+ Position: [-0.132, 0.085, 0.831]
+ Axis: [-0.36, -0.05, -0.93]
+ Isolation: 19.0cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 19.0cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 80.0]
+============================================================
+ Position: [-0.132, 0.085, 0.831]
+ Axis: [-0.36, -0.05, -0.93]
+ Isolation: 19.0cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 26
+     No grasp:
+       #1: Vial 12 (MEDIUM) - Score: 76.0
+       #2: Vial 14 (MEDIUM) - Score: 74.0 (skipped x1)
+       #3: Vial 11 (MEDIUM) - Score: 72.0
+  Analyzing optimal grasp configuration...
+    Tilt: 27.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 75% up vial
+    Approach clearance: 20/100 (min 2.7cm)
+
+============================================================
+VIAL 12/30 - MEDIUM (10mm, 25g) [Isolation Score: 76.0]
+============================================================
+ Position: [0.544, 0.030, 0.804]
+ Axis: [-0.44, -0.14, 0.89]
+ Isolation: 2.5cm to nearest vial
+  Vial too close to neighbors (2 within 4cm)
+  Attempting singulation push...
+     Push trajectory: 13.0cm
+     Start: [0.556, 0.008]
+     End:   [0.497, 0.124]
+  Waiting for physics to settle...
+     Nearest vial moved: 10.0cm
+     Target vial moved: 10.7cm
+  Recomputing isolation scores after push...
+     After push:
+       #1: Vial 11 (MEDIUM) - Score: 100.0
+       #2: Vial 26 (LARGE) - Score: 70.0 (skipped x3)
+       #3: Vial 6 (SMALL) - Score: 51.8
+ After push: 2.7cm to nearest
+  Still crowded after push (2.7cm), but will try grasp anyway...
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (44 valid):
+     #1: Score=0.687 [FC=0.30, Iso=0.33, Geo=0.88, θ=25°]
+     #2: Score=0.658 [FC=0.30, Iso=0.33, Geo=0.69, θ=0°]
+     #3: Score=0.658 [FC=0.30, Iso=0.33, Geo=0.69, θ=0°]
+     #4: Score=0.640 [FC=0.30, Iso=0.33, Geo=0.57, θ=25°]
+     #5: Score=0.638 [FC=0.30, Iso=0.33, Geo=0.55, θ=25°]
+  Best grasp position: [0.521, 0.134, 0.802]
+Grasp: Multi-candidate (score=0.69)
+  Grasp orientation: approach=[-0.22, 0.36, -0.91], fingers=[-0.48, 0.77, 0.42]
+Target: MEDIUM tray (0,1) at [-0.309, -0.041, 0.824]
+  Approaching...
+ Opening gripper to 30.0mm...
+  Descending to grasp...
+ Closing to grip (target: 9.0mm, force=100N)...
+ Initial grip moved vial: 58.1mm
+  Creating constraint...
+     Grasp check: dist to end effector=7.5mm
+     End effector: [0.537, 0.078, 0.803]
+     Vial pos: [0.543, 0.081, 0.800]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 70.6°
+     Lifted 4.9cm, tilt now 67.3° (target: 0°)
+     Lifted 24.7cm, tilt now 41.1° (target: 0°)
+  Forcing vial to vertical (current tilt: 41.1°)...
+     Vial orientation locked to vertical, tilt now: 69.0°
+  Moving to MEDIUM tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: -172° from robot
+       Attempt 1: base=3°, margin=-0.112 rad [BAD]
+       Attempt 2: base=-70°, margin=-0.071 rad [BAD]
+       Attempt 3: base=-77°, margin=-0.012 rad [BAD]
+       Attempt 4: base=-101°, margin=0.425 rad [GOOD]
+     Using configuration #4: base at -101°, margin=0.425 rad
+     End effector to above_target: 3.8mm
+     Vial XY distance to target: 10.0mm
+     Vial height: 1.123m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [8.0, -2.1]mm
+  Descending to slot...
+     Original target: [-0.309, -0.041, 0.824]
+     Adjusted target: [-0.317, -0.039, 0.824]
+     Compensation: [-8.0, 2.1]mm
+     🔧 Correcting vial orientation (tilt: 44.3°)
+     End effector to target: 6.5mm
+     WARNING: Joints near limits at descend:
+       Joint 4: -2.881 rad (limits: [-3.072, -0.070], margin: 0.191 rad)
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 0.5°)
+  Retreating...
+  SUCCESS! MEDIUM vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 11 (MEDIUM) - Score: 100.0
+       #2: Vial 26 (LARGE) - Score: 70.0 (skipped x3)
+       #3: Vial 6 (SMALL) - Score: 58.8
+  Analyzing optimal grasp configuration...
+    Tilt: 60.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 8.9cm)
+
+============================================================
+VIAL 11/30 - MEDIUM (10mm, 25g) [Isolation Score: 100.0]
+============================================================
+ Position: [0.552, 0.015, 0.800]
+ Axis: [-0.10, 0.86, 0.50]
+ Isolation: 9.6cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.876 [FC=0.30, Iso=0.89, Geo=1.02, θ=0°]
+     #2: Score=0.874 [FC=0.30, Iso=0.89, Geo=1.00, θ=0°]
+     #3: Score=0.872 [FC=0.30, Iso=0.87, Geo=1.02, θ=0°]
+     #4: Score=0.871 [FC=0.30, Iso=0.87, Geo=1.02, θ=0°]
+     #5: Score=0.868 [FC=0.30, Iso=0.85, Geo=1.04, θ=0°]
+  Best grasp position: [0.552, 0.015, 0.800]
+Grasp: Multi-candidate (score=0.88)
+  Grasp orientation: approach=[-0.00, 0.00, -1.00], fingers=[-0.42, 0.91, 0.00]
+Target: MEDIUM tray (1,0) at [-0.391, 0.041, 0.824]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 40.0mm...
+  Descending to grasp...
+     WARNING: Gripper outside box at [0.684, 0.172, 1.144]
+     Box bounds: X=[0.200, 0.700], Y=[-0.250, 0.250]
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. IK/Collision during descent
+       Retrying vial 11...
+  Analyzing optimal grasp configuration...
+    Tilt: 60.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 8.9cm)
+
+============================================================
+VIAL 11/30 - MEDIUM (10mm, 25g) [Isolation Score: 100.0]
+============================================================
+ Position: [0.552, 0.015, 0.800]
+ Axis: [-0.10, 0.86, 0.50]
+ Isolation: 9.6cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.880 [FC=0.30, Iso=0.89, Geo=1.04, θ=0°]
+     #2: Score=0.879 [FC=0.30, Iso=0.89, Geo=1.03, θ=0°]
+     #3: Score=0.871 [FC=0.30, Iso=0.87, Geo=1.02, θ=0°]
+     #4: Score=0.869 [FC=0.30, Iso=0.87, Geo=1.00, θ=0°]
+     #5: Score=0.867 [FC=0.30, Iso=0.85, Geo=1.03, θ=0°]
+  Best grasp position: [0.552, 0.015, 0.800]
+Grasp: Multi-candidate (score=0.88)
+  Grasp orientation: approach=[0.00, -0.00, -1.00], fingers=[0.42, -0.91, 0.00]
+Target: MEDIUM tray (1,0) at [-0.391, 0.041, 0.824]
+  Approaching...
+ Opening gripper WIDE for horizontal vial: 40.0mm...
+  Descending to grasp...
+ Closing for horizontal vial (tilt=60°, target=20.0mm, force=150N)...
+ Initial grip moved vial: 14.3mm
+  Creating constraint...
+     Grasp check: dist to end effector=15.8mm
+     End effector: [0.554, 0.014, 0.803]
+     Vial pos: [0.538, 0.011, 0.802]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 51.8°
+     Lifted 5.0cm, tilt now 52.0° (target: 0°)
+     Lifted 24.8cm, tilt now 52.1° (target: 0°)
+  Forcing vial to vertical (current tilt: 52.1°)...
+     Vial orientation locked to vertical, tilt now: 70.9°
+  Moving to MEDIUM tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: 174° from robot
+       Attempt 1: base=66°, margin=-0.037 rad [BAD]
+       Attempt 2: base=90°, margin=-0.070 rad [BAD]
+       Attempt 3: base=90°, margin=-0.074 rad [BAD]
+       Attempt 4: base=89°, margin=-0.071 rad [BAD]
+       Attempt 5: base=89°, margin=-0.070 rad [BAD]
+       Attempt 6: base=87°, margin=-0.045 rad [BAD]
+     Using configuration #1: base at 66°, margin=-0.037 rad
+     End effector to above_target: 5.5mm
+     Vial XY distance to target: 14.4mm
+     Vial height: 1.127m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [-15.3, -3.8]mm
+  Descending to slot...
+     Original target: [-0.391, 0.041, 0.824]
+     Adjusted target: [-0.376, 0.045, 0.824]
+     Compensation: [15.3, 3.8]mm
+     End effector to target: 2.5mm
+     WARNING: Joints near limits at descend:
+       Joint 7: 2.913 rad (limits: [-2.897, 2.897], margin: -0.016 rad)
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 0.1°)
+  Retreating...
+  SUCCESS! MEDIUM vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 26 (LARGE) - Score: 70.0 (skipped x3)
+       #2: Vial 6 (SMALL) - Score: 58.8
+       #3: Vial 10 (SMALL) - Score: 49.0
+  Analyzing optimal grasp configuration...
+    Tilt: 158.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 70.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.07, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 70.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.07, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 70.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.07, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 26
+     No grasp:
+       #1: Vial 26 (LARGE) - Score: 60.0 (skipped x4)
+       #2: Vial 6 (SMALL) - Score: 58.8
+       #3: Vial 10 (SMALL) - Score: 49.0
+  Analyzing optimal grasp configuration...
+    Tilt: 158.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 60.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.07, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 60.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.07, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 60.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.07, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 26
+     No grasp:
+       #1: Vial 6 (SMALL) - Score: 58.8
+       #2: Vial 26 (LARGE) - Score: 50.0 (skipped x5)
+       #3: Vial 10 (SMALL) - Score: 49.0
+  Analyzing optimal grasp configuration...
+    Tilt: 39.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 6.6cm)
+
+============================================================
+VIAL 6/30 - SMALL (8mm, 18g) [Isolation Score: 58.8]
+============================================================
+ Position: [0.473, 0.159, 0.798]
+ Axis: [-0.64, 0.04, 0.77]
+ Isolation: 8.0cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (39 valid):
+     #1: Score=0.791 [FC=0.30, Iso=0.59, Geo=1.05, θ=0°]
+     #2: Score=0.791 [FC=0.30, Iso=0.59, Geo=1.05, θ=0°]
+     #3: Score=0.791 [FC=0.30, Iso=0.59, Geo=1.05, θ=0°]
+     #4: Score=0.790 [FC=0.30, Iso=0.59, Geo=1.04, θ=0°]
+     #5: Score=0.789 [FC=0.30, Iso=0.59, Geo=1.04, θ=0°]
+  Best grasp position: [0.473, 0.159, 0.798]
+Grasp: Multi-candidate (score=0.79)
+  Grasp orientation: approach=[0.00, 0.00, -1.00], fingers=[0.17, 0.98, 0.00]
+Target: SMALL tray (1,1) at [-0.311, -0.162, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 0.0mm
+     Vial not gripped (moved=0.0mm, gripper=14.4mm vs expected=14.4mm)
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. Gripper didn't grip vial
+       Retrying vial 6...
+  Analyzing optimal grasp configuration...
+    Tilt: 168.6 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 50/100 (min 5.9cm)
+
+============================================================
+VIAL 23/30 - LARGE (12mm, 35g) [Isolation Score: 87.0]
+============================================================
+ Position: [0.523, -0.122, 0.852]
+ Axis: [-0.18, 0.08, -0.98]
+ Isolation: 5.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (48 valid):
+     #1: Score=0.759 [FC=0.30, Iso=0.87, Geo=0.28, θ=0°]
+     #2: Score=0.759 [FC=0.30, Iso=0.87, Geo=0.28, θ=0°]
+     #3: Score=0.758 [FC=0.30, Iso=0.87, Geo=0.27, θ=0°]
+     #4: Score=0.753 [FC=0.30, Iso=0.87, Geo=0.24, θ=0°]
+     #5: Score=0.753 [FC=0.30, Iso=0.85, Geo=0.28, θ=0°]
+  Best grasp position: [0.523, -0.122, 0.863]
+Grasp: Multi-candidate (score=0.76)
+  Grasp orientation: approach=[-0.00, 0.00, -1.00], fingers=[-0.33, 0.95, 0.00]
+Target: LARGE tray (1,0) at [-0.387, 0.238, 0.849]
+  Approaching...
+ Opening gripper to 36.0mm...
+  Descending to grasp...
+ Closing to grip (target: 10.8mm, force=100N)...
+ Initial grip moved vial: 13.6mm
+  Creating constraint...
+     Grasp check: dist to end effector=21.6mm
+     End effector: [0.521, -0.122, 0.866]
+     Vial pos: [0.535, -0.117, 0.851]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 23.6°
+     Lifted 5.3cm, tilt now 43.4° (target: 0°)
+     Lifted 24.9cm, tilt now 45.9° (target: 0°)
+  Forcing vial to vertical (current tilt: 45.9°)...
+     Vial orientation locked to vertical, tilt now: 48.4°
+  Moving to LARGE tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: 148° from robot
+       Attempt 1: base=50°, margin=0.387 rad [GOOD]
+     Using configuration #1: base at 50°, margin=0.387 rad
+     End effector to above_target: 5.4mm
+     Vial XY distance to target: 15.6mm
+     Vial height: 1.118m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [7.8, 6.7]mm
+  Descending to slot...
+     Original target: [-0.387, 0.238, 0.849]
+     Adjusted target: [-0.395, 0.231, 0.849]
+     Compensation: [-7.8, -6.7]mm
+     🔧 Correcting vial orientation (tilt: 72.6°)
+     🔧 Correcting vial orientation (tilt: 17.0°)
+     🔧 Correcting vial orientation (tilt: 21.9°)
+     🔧 Correcting vial orientation (tilt: 22.4°)
+     🔧 Correcting vial orientation (tilt: 25.6°)
+     End effector to target: 2.3mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 8.3°)
+  Retreating...
+  SUCCESS! LARGE vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 10 (SMALL) - Score: 73.0
+       #2: Vial 6 (SMALL) - Score: 62.3
+       #3: Vial 26 (LARGE) - Score: 50.0 (skipped x5)
+  Analyzing optimal grasp configuration...
+    Tilt: 82.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+============================================================
+VIAL 10/30 - SMALL (8mm, 18g) [Isolation Score: 73.0]
+============================================================
+ Position: [0.573, 0.114, 0.790]
+ Axis: [0.51, -0.85, 0.13]
+ Isolation: 3.0cm to nearest vial
+  Vial too close to neighbors (1 within 4cm)
+  Attempting singulation push...
+     ⚠️  Vial too close to edge for push (space: X=12cm, Y=11cm)
+ Cannot calculate push trajectory, skipping...
+     Cannot push:
+       #1: Vial 10 (SMALL) - Score: 63.0 (skipped x1)
+       #2: Vial 6 (SMALL) - Score: 62.3
+       #3: Vial 26 (LARGE) - Score: 50.0 (skipped x5)
+  Analyzing optimal grasp configuration...
+    Tilt: 82.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+============================================================
+VIAL 10/30 - SMALL (8mm, 18g) [Isolation Score: 63.0]
+============================================================
+ Position: [0.573, 0.114, 0.790]
+ Axis: [0.51, -0.85, 0.13]
+ Isolation: 3.0cm to nearest vial
+  Vial too close to neighbors (1 within 4cm)
+  Attempting singulation push...
+     ⚠️  Vial too close to edge for push (space: X=12cm, Y=11cm)
+ Cannot calculate push trajectory, skipping...
+     Cannot push:
+       #1: Vial 6 (SMALL) - Score: 62.3
+       #2: Vial 10 (SMALL) - Score: 53.0 (skipped x2)
+       #3: Vial 26 (LARGE) - Score: 50.0 (skipped x5)
+  Analyzing optimal grasp configuration...
+    Tilt: 39.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 8.0cm)
+
+============================================================
+VIAL 6/30 - SMALL (8mm, 18g) [Isolation Score: 62.3]
+============================================================
+ Position: [0.473, 0.159, 0.798]
+ Axis: [-0.64, 0.04, 0.77]
+ Isolation: 8.6cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (39 valid):
+     #1: Score=0.801 [FC=0.30, Iso=0.62, Geo=1.04, θ=0°]
+     #2: Score=0.801 [FC=0.30, Iso=0.62, Geo=1.04, θ=0°]
+     #3: Score=0.800 [FC=0.30, Iso=0.62, Geo=1.04, θ=0°]
+     #4: Score=0.799 [FC=0.30, Iso=0.62, Geo=1.03, θ=0°]
+     #5: Score=0.799 [FC=0.30, Iso=0.62, Geo=1.03, θ=0°]
+  Best grasp position: [0.473, 0.159, 0.798]
+Grasp: Multi-candidate (score=0.80)
+  Grasp orientation: approach=[-0.00, -0.00, -1.00], fingers=[-0.17, -0.98, 0.00]
+Target: SMALL tray (1,1) at [-0.311, -0.162, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 0.0mm
+     Vial not gripped (moved=0.0mm, gripper=14.4mm vs expected=14.4mm)
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. Gripper didn't grip vial
+       Retrying vial 6...
+  Analyzing optimal grasp configuration...
+    Tilt: 39.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 8.2cm)
+
+============================================================
+VIAL 6/30 - SMALL (8mm, 18g) [Isolation Score: 62.3]
+============================================================
+ Position: [0.473, 0.159, 0.798]
+ Axis: [-0.64, 0.04, 0.77]
+ Isolation: 8.8cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   Grasp Candidate Scoring (39 valid):
+     #1: Score=0.801 [FC=0.30, Iso=0.62, Geo=1.05, θ=0°]
+     #2: Score=0.801 [FC=0.30, Iso=0.62, Geo=1.04, θ=0°]
+     #3: Score=0.799 [FC=0.30, Iso=0.62, Geo=1.03, θ=0°]
+     #4: Score=0.798 [FC=0.30, Iso=0.62, Geo=1.03, θ=0°]
+     #5: Score=0.798 [FC=0.30, Iso=0.62, Geo=1.02, θ=0°]
+  Best grasp position: [0.473, 0.159, 0.798]
+Grasp: Multi-candidate (score=0.80)
+  Grasp orientation: approach=[0.00, -0.00, -1.00], fingers=[0.57, -0.82, 0.00]
+Target: SMALL tray (1,1) at [-0.311, -0.162, 0.819]
+  Approaching...
+ Opening gripper to 24.0mm...
+  Descending to grasp...
+ Closing to grip (target: 7.2mm, force=100N)...
+ Initial grip moved vial: 35.2mm
+  Creating constraint...
+     Grasp check: dist to end effector=1.8mm
+     End effector: [0.479, 0.124, 0.795]
+     Vial pos: [0.481, 0.125, 0.795]
+     Creating constraint (position locked, orientation FREE for re-orienting)...
+     Vial attached via constraint!
+  Lifting and re-orienting to vertical...
+     Initial vial tilt: 58.4°
+     Lifted 5.1cm, tilt now 56.5° (target: 0°)
+     Lifted 25.1cm, tilt now 54.2° (target: 0°)
+  Forcing vial to vertical (current tilt: 54.2°)...
+     Vial orientation locked to vertical, tilt now: 86.4°
+  Moving to SMALL tray...
+     Trying multiple base rotations to find best arm configuration...
+     Target tray direction: -153° from robot
+       Attempt 1: base=-56°, margin=0.029 rad [RISKY]
+       Attempt 2: base=-62°, margin=0.158 rad [GOOD]
+     Using configuration #2: base at -62°, margin=0.158 rad
+     End effector to above_target: 4.9mm
+     Vial XY distance to target: 6.0mm
+     Vial height: 1.121m (should be >0.9m)
+  Self-calibrating vial position...
+     Measured offset: [1.7, -0.1]mm
+  Descending to slot...
+     Original target: [-0.311, -0.162, 0.819]
+     Adjusted target: [-0.313, -0.161, 0.819]
+     Compensation: [-1.7, 0.1]mm
+     End effector to target: 5.1mm
+  Releasing...
+  Opening gripper...
+     Vial settled vertically (tilt: 4.2°)
+  Retreating...
+  SUCCESS! SMALL vial placed!
+
+  Recomputing isolation scores (vial removed from scene)...
+     After successful placement:
+       #1: Vial 10 (SMALL) - Score: 58.0 (skipped x2)
+       #2: Vial 26 (LARGE) - Score: 50.0 (skipped x5)
+       #3: Vial 19 (MEDIUM) - Score: 49.3
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+  SMALL tray full, skipping vial 10
+     After tray full:
+       #1: Vial 26 (LARGE) - Score: 50.0 (skipped x5)
+       #2: Vial 19 (MEDIUM) - Score: 49.3
+       #3: Vial 10 (SMALL) - Score: 48.0 (skipped x3)
+  Analyzing optimal grasp configuration...
+    Tilt: 158.3 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 50.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.08, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.3 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 50.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.08, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.3 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 50.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.08, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 26
+     No grasp:
+       #1: Vial 19 (MEDIUM) - Score: 49.3
+       #2: Vial 10 (SMALL) - Score: 48.0 (skipped x3)
+       #3: Vial 13 (MEDIUM) - Score: 44.0
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+============================================================
+VIAL 19/30 - MEDIUM (10mm, 25g) [Isolation Score: 49.3]
+============================================================
+ Position: [0.579, 0.143, 0.790]
+ Axis: [0.73, -0.69, -0.00]
+ Isolation: 3.0cm to nearest vial
+  Vial too close to neighbors (1 within 4cm)
+  Attempting singulation push...
+     ⚠️  Vial too close to edge for push (space: X=13cm, Y=14cm)
+ Cannot calculate push trajectory, skipping...
+     Cannot push:
+       #1: Vial 10 (SMALL) - Score: 48.0 (skipped x3)
+       #2: Vial 13 (MEDIUM) - Score: 44.0
+       #3: Vial 30 (LARGE) - Score: 42.5
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+  SMALL tray full, skipping vial 10
+     After tray full:
+       #1: Vial 13 (MEDIUM) - Score: 44.0
+       #2: Vial 30 (LARGE) - Score: 42.5
+       #3: Vial 25 (LARGE) - Score: 41.5
+  Analyzing optimal grasp configuration...
+    Tilt: 64.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.0cm)
+
+============================================================
+VIAL 13/30 - MEDIUM (10mm, 25g) [Isolation Score: 44.0]
+============================================================
+ Position: [0.338, 0.188, 0.798]
+ Axis: [0.78, 0.46, 0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 13...
+  Analyzing optimal grasp configuration...
+    Tilt: 64.7 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.0cm)
+
+============================================================
+VIAL 13/30 - MEDIUM (10mm, 25g) [Isolation Score: 44.0]
+============================================================
+ Position: [0.338, 0.188, 0.798]
+ Axis: [0.78, 0.47, 0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 13...
+  Analyzing optimal grasp configuration...
+    Tilt: 64.8 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.0cm)
+
+============================================================
+VIAL 13/30 - MEDIUM (10mm, 25g) [Isolation Score: 44.0]
+============================================================
+ Position: [0.338, 0.188, 0.798]
+ Axis: [0.78, 0.47, 0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 13
+     No grasp:
+       #1: Vial 30 (LARGE) - Score: 42.5
+       #2: Vial 25 (LARGE) - Score: 41.5
+       #3: Vial 26 (LARGE) - Score: 40.0 (skipped x6)
+  Analyzing optimal grasp configuration...
+    Tilt: 115.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.2cm)
+
+============================================================
+VIAL 30/30 - LARGE (12mm, 35g) [Isolation Score: 42.5]
+============================================================
+ Position: [0.456, 0.175, 0.822]
+ Axis: [-0.08, -0.90, -0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 30...
+  Analyzing optimal grasp configuration...
+    Tilt: 115.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.2cm)
+
+============================================================
+VIAL 30/30 - LARGE (12mm, 35g) [Isolation Score: 42.5]
+============================================================
+ Position: [0.456, 0.175, 0.822]
+ Axis: [-0.08, -0.90, -0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 30...
+  Analyzing optimal grasp configuration...
+    Tilt: 115.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.2cm)
+
+============================================================
+VIAL 30/30 - LARGE (12mm, 35g) [Isolation Score: 42.5]
+============================================================
+ Position: [0.456, 0.175, 0.822]
+ Axis: [-0.08, -0.90, -0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 30
+     No grasp:
+       #1: Vial 25 (LARGE) - Score: 41.5
+       #2: Vial 26 (LARGE) - Score: 40.0 (skipped x6)
+       #3: Vial 19 (MEDIUM) - Score: 39.3 (skipped x1)
+  Analyzing optimal grasp configuration...
+    Tilt: 130.4 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 7.9cm)
+
+============================================================
+VIAL 25/30 - LARGE (12mm, 35g) [Isolation Score: 41.5]
+============================================================
+ Position: [0.640, 0.005, 0.835]
+ Axis: [-0.63, -0.44, -0.65]
+ Isolation: 7.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 25...
+  Analyzing optimal grasp configuration...
+    Tilt: 130.4 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 7.9cm)
+
+============================================================
+VIAL 25/30 - LARGE (12mm, 35g) [Isolation Score: 41.5]
+============================================================
+ Position: [0.640, 0.005, 0.835]
+ Axis: [-0.63, -0.44, -0.65]
+ Isolation: 7.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 25...
+  Analyzing optimal grasp configuration...
+    Tilt: 130.4 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 80/100 (min 7.9cm)
+
+============================================================
+VIAL 25/30 - LARGE (12mm, 35g) [Isolation Score: 41.5]
+============================================================
+ Position: [0.640, 0.005, 0.835]
+ Axis: [-0.63, -0.44, -0.65]
+ Isolation: 7.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 25
+     No grasp:
+       #1: Vial 26 (LARGE) - Score: 40.0 (skipped x6)
+       #2: Vial 19 (MEDIUM) - Score: 39.3 (skipped x1)
+       #3: Vial 10 (SMALL) - Score: 38.0 (skipped x4)
+  Analyzing optimal grasp configuration...
+    Tilt: 158.3 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 40.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.08, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.3 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 40.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.08, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 26...
+  Analyzing optimal grasp configuration...
+    Tilt: 158.3 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 18.9cm)
+
+============================================================
+VIAL 26/30 - LARGE (12mm, 35g) [Isolation Score: 40.0]
+============================================================
+ Position: [-0.132, 0.086, 0.830]
+ Axis: [-0.36, -0.08, -0.93]
+ Isolation: 18.9cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 26
+     No grasp:
+       #1: Vial 19 (MEDIUM) - Score: 39.3 (skipped x1)
+       #2: Vial 10 (SMALL) - Score: 38.0 (skipped x4)
+       #3: Vial 13 (MEDIUM) - Score: 34.0 (skipped x1)
+
+  AGGRESSIVE MODE: 5 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+============================================================
+VIAL 19/30 - MEDIUM (10mm, 25g) [Isolation Score: 39.3]
+============================================================
+ Position: [0.579, 0.143, 0.790]
+ Axis: [0.73, -0.69, -0.00]
+ Isolation: 3.0cm to nearest vial
+  Vial too close to neighbors (1 within 4cm)
+  Attempting singulation push...
+     ⚠️  Vial too close to edge for push (space: X=13cm, Y=14cm)
+ Cannot calculate push trajectory, skipping...
+     Cannot push:
+       #1: Vial 10 (SMALL) - Score: 38.0 (skipped x4)
+       #2: Vial 13 (MEDIUM) - Score: 34.0 (skipped x1)
+       #3: Vial 30 (LARGE) - Score: 32.5 (skipped x1)
+
+  AGGRESSIVE MODE: 5 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 90.0 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 20/100 (min 3.0cm)
+
+  SMALL tray full, skipping vial 10
+     After tray full:
+       #1: Vial 13 (MEDIUM) - Score: 34.0 (skipped x1)
+       #2: Vial 30 (LARGE) - Score: 32.5 (skipped x1)
+       #3: Vial 25 (LARGE) - Score: 31.5 (skipped x1)
+
+  AGGRESSIVE MODE: 5 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 65.5 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.0cm)
+
+============================================================
+VIAL 13/30 - MEDIUM (10mm, 25g) [Isolation Score: 34.0]
+============================================================
+ Position: [0.338, 0.188, 0.798]
+ Axis: [0.78, 0.47, 0.41]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 13...
+
+  AGGRESSIVE MODE: 5 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 65.6 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.0cm)
+
+============================================================
+VIAL 13/30 - MEDIUM (10mm, 25g) [Isolation Score: 34.0]
+============================================================
+ Position: [0.338, 0.188, 0.798]
+ Axis: [0.78, 0.47, 0.41]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 13...
+
+  AGGRESSIVE MODE: 5 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 65.6 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.0cm)
+
+============================================================
+VIAL 13/30 - MEDIUM (10mm, 25g) [Isolation Score: 34.0]
+============================================================
+ Position: [0.338, 0.188, 0.798]
+ Axis: [0.78, 0.48, 0.41]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 13
+     No grasp:
+       #1: Vial 30 (LARGE) - Score: 32.5 (skipped x1)
+       #2: Vial 25 (LARGE) - Score: 31.5 (skipped x1)
+       #3: Vial 26 (LARGE) - Score: 30.0 (skipped x7)
+
+  AGGRESSIVE MODE: 6 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 115.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.2cm)
+
+============================================================
+VIAL 30/30 - LARGE (12mm, 35g) [Isolation Score: 32.5]
+============================================================
+ Position: [0.457, 0.175, 0.822]
+ Axis: [-0.08, -0.90, -0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 1/3 failed. No valid grasp candidate
+       Retrying vial 30...
+
+  AGGRESSIVE MODE: 6 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 115.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.2cm)
+
+============================================================
+VIAL 30/30 - LARGE (12mm, 35g) [Isolation Score: 32.5]
+============================================================
+ Position: [0.457, 0.175, 0.822]
+ Axis: [-0.08, -0.90, -0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+       Grasp attempt 2/3 failed. No valid grasp candidate
+       Retrying vial 30...
+
+  AGGRESSIVE MODE: 6 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 115.2 degrees
+    Grasp type: Top-down (simple)
+    Grasp height: 50% up vial
+    Approach clearance: 100/100 (min 12.2cm)
+
+============================================================
+VIAL 30/30 - LARGE (12mm, 35g) [Isolation Score: 32.5]
+============================================================
+ Position: [0.457, 0.175, 0.822]
+ Axis: [-0.08, -0.90, -0.43]
+ Isolation: 12.2cm to nearest vial
+  Generating 8x3x2 grasp candidates...
+   No valid grasp candidates found!
+  No valid grasp found!
+     Resetting robot to home position...
+      All 3 grasp attempts failed. No valid grasp candidate
+      Skipping vial 30
+     No grasp:
+       #1: Vial 25 (LARGE) - Score: 31.5 (skipped x1)
+       #2: Vial 26 (LARGE) - Score: 30.0 (skipped x7)
+       #3: Vial 19 (MEDIUM) - Score: 29.3 (skipped x2)
+
+  AGGRESSIVE MODE: 7 consecutive failures
+   Lowering isolation threshold and trying harder...
+  Analyzing optimal grasp configuration...
+    Tilt: 130.4 degrees

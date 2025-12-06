@@ -1,0 +1,41 @@
+Experiment: experiment_10trials_20251206_052640
+Started: Sat Dec  6 05:26:40 AM EST 2025
+Number of trials: 10
+
+Running trial 1...
+  Trial 1: 10 successes, 7 failures
+Running trial 2...
+  Trial 2: 10 successes, 11 failures
+Running trial 3...
+  Trial 3: 6 successes, 2 failures
+Running trial 4...
+  Trial 4: 10 successes, 10 failures
+Running trial 5...
+  Trial 5: 10 successes, 1 failures
+Running trial 6...
+  Trial 6: 9 successes, 1 failures
+Running trial 7...
+  Trial 7: 9 successes, 1 failures
+Running trial 8...
+  Trial 8: 8 successes, 8 failures
+Running trial 9...
+  Trial 9: 9 successes, 8 failures
+Running trial 10...
+  Trial 10: 9 successes, 0 failures
+
+================================================================================
+EXPERIMENT COMPLETE
+================================================================================
+
+Experimental Setup:
+  - 30 vials per trial, random placement in box
+  - 12 tray slots per trial as goal
+  - Total slots available: 120
+
+Results:
+  - Slots filled: 90 / 120
+  - Vials skipped after 3 retries: 49
+  - Task completion rate: 75.0%
+
+Completed: Sat Dec  6 08:47:01 AM EST 2025
+
